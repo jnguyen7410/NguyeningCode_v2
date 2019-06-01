@@ -1,7 +1,7 @@
 const path = require('path');
 var HTMLWebpackPlugin = require('html-webpack-plugin');
 var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
-    template: path.resolve(__dirname, './app/index.html'),
+    template: path.resolve(__dirname, './index.html'),
     filename: 'index.html',
     inject: 'body'
 });
