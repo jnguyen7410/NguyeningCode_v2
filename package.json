@@ -1,0 +1,38 @@
+{
+    "name": "nguyeningcode_v2",
+    "version": "1.0.0",
+    "description": "Portfolio for Jurytan",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack",
+        "start": "webpack-dev-server"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/jnguyen7410/nguyeningcode_v2.git"
+    },
+    "keywords": [
+        "portfolio",
+        "jurytan"
+    ],
+    "author": "jurytan",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jnguyen7410/nguyeningcode_v2/issues"
+    },
+    "homepage": "https://github.com/jnguyen7410/nguyeningcode_v2#readme",
+    "dependencies": {
+        "create-react-app": "^3.0.1",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.5",
+        "babel-preset-react": "^6.24.1",
+        "html-webpack-plugin": "^3.2.0",
+        "webpack": "^4.32.2",
+        "webpack-cli": "^3.3.2",
+        "webpack-dev-server": "^3.5.0"
+    }
+}
