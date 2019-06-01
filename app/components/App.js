@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 
 class Clock extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {date: new Date(), counter: 0};
+        this.state = {
+            date: new Date(),
+            counter: 0,
+            exploded: false
+        };
+        this.handler = this.handler.bind(this);
     }
 
     componentDidMount() {
@@ -17,6 +23,14 @@ class Clock extends React.Component {
         clearInterval(this.timerId);
     }
 
+    handler(e) {
+        alert('BOOM!');
+        this.setState((state, props) => ({
+            exploded: true
+        }));
+        e.preventDefault();
+    }
+
     tick() {
         this.setState({
             date: new Date()
@@ -28,13 +42,28 @@ class Clock extends React.Component {
     }
 
     render() {
+        var button_bomb = this.state.exploded ? null : <ExplodingButton handler={this.handler}/>;
         return (
             <div>
                 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
                 <h3>Psst...you wasted {this.state.counter} seconds on this page. Silly you :)</h3>
+                {button_bomb}
             </div>
         );
     }
+}
+
+
+
+class ExplodingButton extends React.Component {
+    render() {
+        return (
+            <button id="exploding_button" onClick={this.props.handler}>
+                Don't press me...
+            </button>
+        )
+    };
+    
 }
 
 
